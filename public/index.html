@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PromptCraft</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Background effects -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow glow-1"></div>
+  <div class="bg-glow glow-2"></div>
+
+  <div class="container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">PromptCraft</span>
+      </div>
+      <div class="badge">AI Powered</div>
+    </header>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-tag">Free • Fast • Powerful</div>
+      <h1 class="hero-title">
+        Transform your ideas into
+        <span class="gradient-text">perfect prompts</span>
+      </h1>
+      <p class="hero-sub">Type anything in any language. Get a prompt ready to paste into any AI.</p>
+    </div>
+
+    <!-- Main card -->
+    <div class="card">
+
+      <!-- Category -->
+      <div class="field">
+        <label class="field-label">Category</label>
+        <div class="categories" id="categories">
+          <button class="cat active" data-cat="General">General</button>
+          <button class="cat" data-cat="Writing">Writing</button>
+          <button class="cat" data-cat="Coding">Coding</button>
+          <button class="cat" data-cat="Research">Research</button>
+          <button class="cat" data-cat="Marketing">Marketing</button>
+          <button class="cat" data-cat="Education">Education</button>
+          <button class="cat" data-cat="Analysis">Analysis</button>
+          <button class="cat" data-cat="Image">Image</button>
+        </div>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Idea input -->
+      <div class="field">
+        <label class="field-label">
+          Your Idea
+          <span class="field-hint">Ctrl+Enter to generate</span>
+        </label>
+        <div class="textarea-wrapper">
+          <textarea
+            id="ideaInput"
+            rows="5"
+            placeholder="Describe your idea in any language or style...&#10;e.g. 'i want email to professor for internship' or 'plan to learn python 30 days'"
+          ></textarea>
+          <div class="textarea-glow"></div>
+        </div>
+        <div class="char-count"><span id="charCount">0</span> characters</div>
+      </div>
+
+      <!-- Generate button -->
+      <button id="generateBtn">
+        <span class="btn-icon">✦</span>
+        <span class="btn-text">Generate Prompt</span>
+        <span class="btn-arrow">→</span>
+        <div class="btn-shimmer"></div>
+      </button>
+
+    </div>
+
+    <!-- Result -->
+    <div class="result-card" id="resultCard">
+      <div class="result-header">
+        <div class="result-title">
+          <span class="result-dot"></span>
+          Generated Prompt
+        </div>
+        <div class="result-actions">
+          <button class="action-btn" id="copyBtn">
+            <span id="copyIcon">⎘</span>
+            <span id="copyText">Copy</span>
+          </button>
+        </div>
+      </div>
+      <div class="result-body">
+        <p id="resultText"></p>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="history-section" id="historySection" style="display:none">
+      <div class="history-label">Recent</div>
+      <div class="history-list" id="historyList"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      Built with Groq AI • Free to use • No data stored
+    </footer>
+
+  </div>
+
+  <!-- Loading overlay -->
+  <div class="loading-overlay" id="loadingOverlay">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <p class="loading-text">Crafting your prompt...</p>
+      <p class="loading-sub">This takes 2-3 seconds</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
